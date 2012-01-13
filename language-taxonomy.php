@@ -3,7 +3,7 @@
 Plugin Name: Language Taxonomy
 Plugin URI: http://www.lostfocus.de/language-taxonomy/
 Description: Adds a language taxonomy to posts, pages and other items.
-Version: 0.1
+Version: 0.2
 Author: Dominik Schwind
 Author URI: http://www.lostfocus.de/
 */
@@ -34,6 +34,10 @@ function create_language_taxonomies()
 		'rewrite' => array( 'slug' => 'lang' ),
 		));
 
+}
+
+function lt_the_language($id){
+	the_terms($id,'language');
 }
 
 add_action( 'init', 'create_language_taxonomies', 0 );
